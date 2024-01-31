@@ -3,24 +3,31 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Calculator implements ICalculator {
 
+// clase que implementa la interfaz 
+public class Calculator implements ICalculator {
+//método para sumar 2 enteros 
     public int add(int n1, int n2) {
         return n1 + n2;
     }
 
+    //método para restar 2 enteros
     public int substraction(int n1, int n2) {
         return n1 - n2;
     }
 
+    //método para multiplicar 2 enteros 
     public int multiplication(int n1, int n2) {
         return n1 * n2;
     }
 
+    //método para dividir 2 enteros
+
     public int division(int n1, int n2) {
         return n1 / n2;
     }
-
+// Método para obtener el residuo de la división de dos números enteros
+    // Puede lanzar una excepción si el segundo número es cero
     public int residue(int n1, int n2) throws Exception {
         if (n2 == 0) {
             throw new Exception("Division por cero, indeterminado");
@@ -38,7 +45,7 @@ public class Calculator implements ICalculator {
         leer.close();
         return e;
     }
-
+// Método para resolver una expresión matemática en notación polaca inversa
     public int solve(ArrayList<Character> elementos) throws Exception {
         Stack<Integer> stack = new Stack<>();
         for (char elemento : elementos) {
